@@ -3,8 +3,11 @@ body {background-color:lightyellow}
 </style>
 
 <h1>Find a GitHub Profile</h1>
-<form>
-<p></p>
 
-<input type="text" name="username"></input>
-</form>
+<div>
+  <%= form_tag profile_display_path do %>
+    <%= label_tag(:username_label, "Enter Github Username:") %>
+    <%= text_field_tag(:username, nil, placeholder:"Username") %>
+    <%= submit_tag("Get Repositories") %>
+  <% end %>
+</div>

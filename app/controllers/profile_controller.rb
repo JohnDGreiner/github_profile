@@ -3,5 +3,6 @@ class ProfileController < ApplicationController
   end
 
   def display
+    @username = params[:username]
   end
 end

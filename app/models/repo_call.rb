@@ -8,8 +8,6 @@ class RepoCall
   def repo_name
     #  @repo.each {|n| n["name"]}
     @repo.map {|n| n["name"]}
-
-
   end
 
   def get_data
