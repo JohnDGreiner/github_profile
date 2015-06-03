@@ -21,19 +21,19 @@
 <div class="container">
  <div class="columns profilecols">
    <div class="column one-fourth vcard" itemscope itemtype="http://schema.org/Person">
-       <a href="https://avatars1.githubusercontent.com/u/5350842?v=3&amp;s=400" aria-hidden="true" class="vcard-avatar" itemprop="image"><img alt="" class="avatar" height="230" src="https://avatars3.githubusercontent.com/u/5350842?v=3&amp;s=460" width="230" /></a>
+       <a href="https://avatars1.githubusercontent.com/u/5350842?v=3&amp;s=400" aria-hidden="true" class="vcard-avatar" itemprop="image"><img alt="" class="avatar" height="230" src=<%= @profile.avatar_url %>&amp;s=460" width="230" /></a>
 
      <h1 class="vcard-names">
-       <span class="vcard-fullname" itemprop="name">Mason F. Matthews</span>
-       <span class="vcard-username" itemprop="additionalName">masonfmatthews</span>
+       <span class="vcard-fullname" itemprop="name"><%= @profile.user_name %></span>
+       <span class="vcard-username" itemprop="additionalName"><%= @profile.user_login %></span>
      </h1>
 
 
 
 <ul class="vcard-details">
-     <li class="vcard-detail" itemprop="worksFor" title="The Iron Yard"><span class="octicon octicon-organization"></span>The Iron Yard</li>
+     <li class="vcard-detail" itemprop="worksFor" title="The Iron Yard"><span class="octicon octicon-organization"></span><%= @profile.company %></li>
 
- <li class="vcard-detail" itemprop="homeLocation" title="Durham, NC"><span class="octicon octicon-location"></span>Durham, NC</li>
+ <li class="vcard-detail" itemprop="homeLocation" title="Durham, NC"><span class="octicon octicon-location"></span><%= @profile.location %></li>
 
  <li class="vcard-detail"><span class="octicon octicon-clock"></span><span class="join-label">Joined on </span><time class="join-date" datetime="2013-08-31T02:31:11Z" day="numeric" is="local-time" month="short" year="numeric">Aug 30, 2013</time></li>
 </ul>
@@ -41,7 +41,7 @@
 
      <div class="vcard-stats">
        <a class="vcard-stat" href="/masonfmatthews/followers">
-         <strong class="vcard-stat-count">24</strong>
+         <strong class="vcard-stat-count"><%= @profile.number_of_followers %></strong>
          <span class="text-muted">Followers</span>
        </a>
        <a class="vcard-stat" href="/stars/masonfmatthews">
@@ -49,7 +49,7 @@
          <span class="text-muted">Starred</span>
        </a>
        <a class="vcard-stat" href="/masonfmatthews/following">
-         <strong class="vcard-stat-count">6</strong>
+         <strong class="vcard-stat-count"><%= @profile.number_following %></strong>
          <span class="text-muted">Following</span>
        </a>
      </div>
@@ -113,29 +113,29 @@
  <div class="repo-tab"></div>
 
 
-   <% @repositories.number_of_repositories.times do |a| %>
+   <% @profile.number_of_repositories.times do |a| %>
      <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter" data-filterable-type="substring">
    <li class="repo-list-item public source">
  <div class="repo-list-stats">
-   <%= @repositories.repo_languages[a] %>
+   <%= @profile.repo_languages[a] %>
    <a class="repo-list-stat-item tooltipped tooltipped-s" href="/masonfmatthews/rails_assignments/stargazers" aria-label="Stargazers">
      <span class="octicon octicon-star"></span>
-     <%= @repositories.stargazer_counts[a] %>
+     <%= @profile.stargazer_counts[a] %>
    </a>
    <a class="repo-list-stat-item tooltipped tooltipped-s" href="/masonfmatthews/rails_assignments/network"  aria-label="Forks">
      <span class="octicon octicon-git-branch"></span>
-     <%= @repositories.fork_counts[a] %>
+     <%= @profile.fork_counts[a] %>
    </a>
  </div>
 
  <h3 class="repo-list-name">
    <a href="/masonfmatthews/rails_assignments">
-     <%= @repositories.repo_names[a] %></a>
+     <%= @profile.repo_names[a] %></a>
  </h3>
 
 
    <p class="repo-list-description">
-     <%= @repositories.repo_descriptions[a] %>
+     <%= @profile.repo_descriptions[a] %>
    </p>
 
  <p class="repo-list-meta">

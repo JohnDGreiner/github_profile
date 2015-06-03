@@ -3,6 +3,6 @@ class ProfileController < ApplicationController
   end
 
   def display
-    @repositories = RepoCall.new(params[:username])
+    @profile = RepoCall.new(params[:username])
   end
 end
