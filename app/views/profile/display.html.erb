@@ -41,11 +41,9 @@
                   <span class="text-muted">Following</span>
                 </a>
               </div>
-
               <div class="clearfix">
-                </div>
+              </div>
           </div>
-
           <div class="column three-fourths">
 
 
@@ -116,7 +114,8 @@
                      </p>
 
                      <p class="repo-list-meta">
-                       Updated <time datetime="2015-06-02T14:48:37Z" is="relative-time">Jun 2, 2015</time>
+                       
+                       <%= @profile.repo_update_dates[a] %>
                      </p>
                 </ul>
                 <% end %>
