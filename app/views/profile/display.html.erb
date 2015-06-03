@@ -8,75 +8,64 @@
    <meta name="description" content="masonfmatthews has 10 repositories written in Ruby, CSS, and HTML. Follow their code on GitHub.">
    <meta content="5350842" name="octolytics-dimension-user_id" /><meta content="masonfmatthews" name="octolytics-dimension-user_login" />
 </head>
-   <div class="wrapper">
-     <div class="container clearfix">
-       <div class="site-search  js-site-search" role="search">
-       </div>
-     </div>
-     <div id="site-container" class="context-loader-container" data-pjax-container>
+  <div class="wrapper">
+    <div class="container clearfix">
+      <div class="site-search  js-site-search" role="search">
+      </div>
+    </div>
+    <div id="site-container" class="context-loader-container" data-pjax-container>
+      <div class="container">
+        <div class="columns profilecols">
+          <div class="column one-fourth vcard" itemscope itemtype="http://schema.org/Person">
+            <a href="https://avatars1.githubusercontent.com/u/5350842?v=3&amp;s=400" aria-hidden="true" class="vcard-avatar" itemprop="image"><img alt="" class="avatar" height="230" src=<%= @profile.avatar_url %>&amp;s=460" width="230" /></a>
+
+              <h1 class="vcard-names">
+                <span class="vcard-fullname" itemprop="name"><%= @profile.user_name %></span>
+                <span class="vcard-username" itemprop="additionalName"><%= @profile.user_login %></span>
+              </h1>
+
+              <ul class="vcard-details">
+                <li class="vcard-detail" itemprop="worksFor" title="The Iron Yard"><span class="octicon octicon-organization"></span><%= @profile.company %></li>
+                <li class="vcard-detail" itemprop="homeLocation" title="Durham, NC"><span class="octicon octicon-location"></span><%= @profile.location %></li>
+                <li class="vcard-detail"><span class="octicon octicon-clock"></span><span class="join-label">Joined on </span><time class="join-date" datetime="2013-08-31T02:31:11Z" day="numeric" is="local-time" month="short" year="numeric">Aug 30, 2013</time></li>
+              </ul>
 
 
+              <div class="vcard-stats">
+                <a class="vcard-stat" href="/masonfmatthews/followers">
+                  <strong class="vcard-stat-count"><%= @profile.number_of_followers %></strong>
+                  <span class="text-muted">Followers</span>
+                </a>
+                <a class="vcard-stat" href="/stars/masonfmatthews">
+                  <strong class="vcard-stat-count">1</strong>
+                  <span class="text-muted">Starred</span>
+                </a>
+                <a class="vcard-stat" href="/masonfmatthews/following">
+                  <strong class="vcard-stat-count"><%= @profile.number_following %></strong>
+                  <span class="text-muted">Following</span>
+                </a>
+              </div>
+
+              <div class="clearfix">
+                <h3>Organizations</h3>
+                <a href="/theironyard" aria-label="theironyard" class="tooltipped tooltipped-n avatar-group-item" itemprop="follows"><img alt="@theironyard" class="avatar" height="42" src="https://avatars3.githubusercontent.com/u/2248433?v=3&amp;s=84" width="42" /></a>
+              </div>
+          </div>
+
+          <div class="column three-fourths">
 
 
-<div class="container">
- <div class="columns profilecols">
-   <div class="column one-fourth vcard" itemscope itemtype="http://schema.org/Person">
-       <a href="https://avatars1.githubusercontent.com/u/5350842?v=3&amp;s=400" aria-hidden="true" class="vcard-avatar" itemprop="image"><img alt="" class="avatar" height="230" src=<%= @profile.avatar_url %>&amp;s=460" width="230" /></a>
-
-     <h1 class="vcard-names">
-       <span class="vcard-fullname" itemprop="name"><%= @profile.user_name %></span>
-       <span class="vcard-username" itemprop="additionalName"><%= @profile.user_login %></span>
-     </h1>
-
-
-
-<ul class="vcard-details">
-     <li class="vcard-detail" itemprop="worksFor" title="The Iron Yard"><span class="octicon octicon-organization"></span><%= @profile.company %></li>
-
- <li class="vcard-detail" itemprop="homeLocation" title="Durham, NC"><span class="octicon octicon-location"></span><%= @profile.location %></li>
-
- <li class="vcard-detail"><span class="octicon octicon-clock"></span><span class="join-label">Joined on </span><time class="join-date" datetime="2013-08-31T02:31:11Z" day="numeric" is="local-time" month="short" year="numeric">Aug 30, 2013</time></li>
-</ul>
-
-
-     <div class="vcard-stats">
-       <a class="vcard-stat" href="/masonfmatthews/followers">
-         <strong class="vcard-stat-count"><%= @profile.number_of_followers %></strong>
-         <span class="text-muted">Followers</span>
-       </a>
-       <a class="vcard-stat" href="/stars/masonfmatthews">
-         <strong class="vcard-stat-count">1</strong>
-         <span class="text-muted">Starred</span>
-       </a>
-       <a class="vcard-stat" href="/masonfmatthews/following">
-         <strong class="vcard-stat-count"><%= @profile.number_following %></strong>
-         <span class="text-muted">Following</span>
-       </a>
-     </div>
-
-       <div class="clearfix">
-         <h3>Organizations</h3>
-             <a href="/theironyard" aria-label="theironyard" class="tooltipped tooltipped-n avatar-group-item" itemprop="follows"><img alt="@theironyard" class="avatar" height="42" src="https://avatars3.githubusercontent.com/u/2248433?v=3&amp;s=84" width="42" /></a>
-       </div>
-   </div>
-
-   <div class="column three-fourths">
-
-
-     <div class="tabnav">
-         <div class="right">
-               <span class="user-following-container js-toggler-container js-social-container on">
-
-   <span class="follow">
-     <form accept-charset="UTF-8" action="/users/follow?target=masonfmatthews" class="js-toggler-form js-follow-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="18AajEWgsZumkwlgoEzn5yzEpqLGGn38B5m8c+mnm/aeeR0XoealQmMhpk0XH0j9TilRkmWYZ8ET4DtWFfShAg==" /></div>
-       <button
-         class="btn btn-sm btn-primary js-toggler-target"
-         aria-label="Follow this person" title="Follow masonfmatthews">
-         <span class="octicon octicon-person"></span>
-         Follow
-       </button>
-
-
+            <div class="tabnav">
+              <div class="right">
+                <span class="user-following-container js-toggler-container js-social-container on">
+                  <span class="follow">
+                    <form accept-charset="UTF-8" action="/users/follow?target=masonfmatthews" class="js-toggler-form js-follow-button" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="18AajEWgsZumkwlgoEzn5yzEpqLGGn38B5m8c+mnm/aeeR0XoealQmMhpk0XH0j9TilRkmWYZ8ET4DtWFfShAg==" /></div>
+                      <button
+                      class="btn btn-sm btn-primary js-toggler-target"
+                      aria-label="Follow this person" title="Follow masonfmatthews">
+                      <span class="octicon octicon-person"></span>
+                      Follow
+                    </button>
 
               <div class="select-menu js-menu-container js-select-menu user-actions">
                  <span class="btn btn-sm select-menu-button icon-only js-menu-target" role="button" aria-haspopup="true" aria-label="Report or block user">
@@ -103,44 +92,37 @@
                    </div>
                  </div>
                </div>
+             </div>
+
+             <div class="tab-content js-repo-filter">
+               <div class="repo-tab"></div>
+                <% @profile.number_of_repositories.times do |a| %>
+                <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter" data-filterable-type="substring">
+                 <li class="repo-list-item public source">
+                   <div class="repo-list-stats">
+                     <%= @profile.repo_languages[a] %>
+                     <a class="repo-list-stat-item tooltipped tooltipped-s" href="/masonfmatthews/rails_assignments/stargazers" aria-label="Stargazers">
+                       <span class="octicon octicon-star"></span>
+                       <%= @profile.stargazer_counts[a] %>
+                     </a>
+                     <a class="repo-list-stat-item tooltipped tooltipped-s" href="/masonfmatthews/rails_assignments/network"  aria-label="Forks">
+                       <span class="octicon octicon-git-branch"></span>
+                       <%= @profile.fork_counts[a] %>
+                     </a>
+                   </div>
+
+                   <h3 class="repo-list-name">
+                     <a href="/masonfmatthews/rails_assignments">
+                       <%= @profile.repo_names[a] %></a>
+                     </h3>
 
 
-       </nav>
-     </div>
+                     <p class="repo-list-description">
+                       <%= @profile.repo_descriptions[a] %>
+                     </p>
 
-     <div class="tab-content js-repo-filter">
-
- <div class="repo-tab"></div>
-
-
-   <% @profile.number_of_repositories.times do |a| %>
-     <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter" data-filterable-type="substring">
-   <li class="repo-list-item public source">
- <div class="repo-list-stats">
-   <%= @profile.repo_languages[a] %>
-   <a class="repo-list-stat-item tooltipped tooltipped-s" href="/masonfmatthews/rails_assignments/stargazers" aria-label="Stargazers">
-     <span class="octicon octicon-star"></span>
-     <%= @profile.stargazer_counts[a] %>
-   </a>
-   <a class="repo-list-stat-item tooltipped tooltipped-s" href="/masonfmatthews/rails_assignments/network"  aria-label="Forks">
-     <span class="octicon octicon-git-branch"></span>
-     <%= @profile.fork_counts[a] %>
-   </a>
- </div>
-
- <h3 class="repo-list-name">
-   <a href="/masonfmatthews/rails_assignments">
-     <%= @profile.repo_names[a] %></a>
- </h3>
-
-
-   <p class="repo-list-description">
-     <%= @profile.repo_descriptions[a] %>
-   </p>
-
- <p class="repo-list-meta">
-     Updated <time datetime="2015-06-02T14:48:37Z" is="relative-time">Jun 2, 2015</time>
- </p>
-
- </ul>
-  <% end %>
+                     <p class="repo-list-meta">
+                       Updated <time datetime="2015-06-02T14:48:37Z" is="relative-time">Jun 2, 2015</time>
+                     </p>
+                </ul>
+                <% end %>
