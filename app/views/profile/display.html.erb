@@ -16,7 +16,7 @@
       <div class="container">
         <div class="columns profilecols">
           <div class="column one-fourth vcard" itemscope itemtype="http://schema.org/Person">
-            <a href="https://avatars1.githubusercontent.com/u/5350842?v=3&amp;s=400" aria-hidden="true" class="vcard-avatar" itemprop="image"><img alt="" class="avatar" height="230" src=<%= @profile.avatar_url %>&amp;s=460" width="230" /></a>
+            <a href=<%= @profile.avatar_url %>&amp;s=400" aria-hidden="true" class="vcard-avatar" itemprop="image"><img alt="" class="avatar" height="230" src=<%= @profile.avatar_url %>&amp;s=460" width="230" /></a>
 
               <h1 class="vcard-names">
                 <span class="vcard-fullname" itemprop="name"><%= @profile.user_name %></span>
@@ -114,7 +114,7 @@
                      </p>
 
                      <p class="repo-list-meta">
-                       
+
                        <%= @profile.repo_update_dates[a] %>
                      </p>
                 </ul>

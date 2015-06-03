@@ -1,5 +1,5 @@
 class RepoCall
-  attr_reader :repo
+
   def initialize(username)
     @username = username
     @repo = get_repo
@@ -69,7 +69,7 @@ class RepoCall
   def created_at
     @user["created_at"]
   end
-  
+
 
   def get_repo
     HTTParty.get("https://api.github.com/users/#{@username}/repos?access_token=#{ENV['GITHUB_TOKEN']}")
