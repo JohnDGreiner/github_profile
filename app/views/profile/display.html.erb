@@ -113,32 +113,36 @@
      <div class="tab-content js-repo-filter">
 
  <div class="repo-tab"></div>
-   <div class="filter-bar"></div>
+   
 
+   <% @repositories.number_of_repositories.times do |a| %>
      <ul class="repo-list js-repo-list" data-filterable-for="your-repos-filter" data-filterable-type="substring">
    <li class="repo-list-item public source">
  <div class="repo-list-stats">
-     Ruby
+   <%= @repositories.repo_languages[a] %>
    <a class="repo-list-stat-item tooltipped tooltipped-s" href="/masonfmatthews/rails_assignments/stargazers" aria-label="Stargazers">
      <span class="octicon octicon-star"></span>
-     3
+     <%= @repositories.stargazer_counts[a] %>
    </a>
    <a class="repo-list-stat-item tooltipped tooltipped-s" href="/masonfmatthews/rails_assignments/network"  aria-label="Forks">
      <span class="octicon octicon-git-branch"></span>
-     7
+     <%= @repositories.fork_counts[a] %>
    </a>
  </div>
 
  <h3 class="repo-list-name">
    <a href="/masonfmatthews/rails_assignments">
-     rails_assignments</a>
+     <%= @repositories.repo_names[a] %></a>
  </h3>
 
 
    <p class="repo-list-description">
-     Assignments for the Rails course at The Iron Yard's Durham Campus
+     <%= @repositories.repo_descriptions[a] %>
    </p>
 
  <p class="repo-list-meta">
      Updated <time datetime="2015-06-02T14:48:37Z" is="relative-time">Jun 2, 2015</time>
  </p>
+
+ </ul>
+  <% end %>

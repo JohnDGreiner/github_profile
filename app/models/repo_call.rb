@@ -1,5 +1,5 @@
 class RepoCall
-
+  attr_reader :repo
   def initialize(username)
     @username = username
     @repo = get_data
@@ -33,8 +33,12 @@ class RepoCall
     @repo.map { |f| f["forks"]}
   end
 
+  def number_of_repositories
+    @repo.length
+  end
+
   def get_data
-    HTTParty.get("https://api.github.com/users/masonfmatthews/repos?access_token=#{ENV['GITHUB_TOKEN']}")
+    HTTParty.get("https://api.github.com/users/#{@username}/repos?access_token=#{ENV['GITHUB_TOKEN']}")
   end
 
 end

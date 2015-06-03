@@ -52,4 +52,9 @@ class RepoCallTest < MiniTest::Test
     assert_equal 0, call.fork_counts[0]
   end
 
+  def test_number_of_repos
+    call = RepoCall.new("masonfmatthews")
+    assert_equal 10, call.number_of_repositories
+  end
+
 end
