@@ -5,8 +5,12 @@ require 'minitest/pride'
 require './app/models/repo_call.rb'
 
 class Repocall
-  def get_data
+  def get_repo
     JSON.parse(File.open("./test/models/repo_call.json").read)
+  end
+
+  def get_user
+    JSON.parse(File.open("./test/models/user_call.json").read)
   end
 end
 
@@ -55,6 +59,46 @@ class RepoCallTest < MiniTest::Test
   def test_number_of_repos
     call = RepoCall.new("masonfmatthews")
     assert_equal 10, call.number_of_repositories
+  end
+
+  def test_user_login
+    call = RepoCall.new("masonfmatthews")
+    assert_equal "masonfmatthews", call.user_login
+  end
+
+  def test_avatar_url
+    call = RepoCall.new("masonfmatthews")
+    assert_equal "https://avatars.githubusercontent.com/u/5350842?v=3", call.avatar_url
+  end
+
+  def test_user_name
+    call = RepoCall.new("masonfmatthews")
+    assert_equal "Mason F. Matthews", call.user_name
+  end
+
+  def test_number_of_followers
+    call = RepoCall.new("masonfmatthews")
+    assert_equal 24, call.number_of_followers
+  end
+
+  def test_number_following
+    call = RepoCall.new("masonfmatthews")
+    assert_equal 6, call.number_following
+  end
+
+  def test_company
+    call = RepoCall.new("masonfmatthews")
+    assert_equal "The Iron Yard", call.company
+  end
+
+  def test_location
+    call = RepoCall.new("masonfmatthews")
+    assert_equal "Durham, NC", call.location
+  end
+
+  def test_created_at
+    call = RepoCall.new("masonfmatthews")
+    assert_equal "2013-08-31T02:31:11Z", call.created_at
   end
 
 end

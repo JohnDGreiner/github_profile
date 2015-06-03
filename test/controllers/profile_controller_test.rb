@@ -7,7 +7,7 @@ class ProfileControllerTest < ActionController::TestCase
   end
 
   test "should get display" do
-    get :display
+    post :display
     assert_response :success
   end
 
